@@ -12,4 +12,8 @@ Resources:
     Properties:
       Handler: search-photos.lambda_handler
       Runtime: python3.7
-      CodeUri: ./Lambdas/ 
+      CodeUri: ./Lambdas/
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      CodeUri: ./Frontend
