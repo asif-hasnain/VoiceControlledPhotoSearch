@@ -11,7 +11,7 @@ phases:
 
   post_build:
     commands:
-      - sam package --output-template-file packaged.yaml --s3-bucket my-code-pipeline-bucketz
+      - sam package --output-template-file packaged.yaml --s3-bucket test-assignment3
 
 artifacts:
   type: zip
