@@ -12,4 +12,4 @@ Resources:
     Properties:
       Handler: search-photos.lambda_handler
       Runtime: python3.7
-      CodeUri: ./Lambdas/
+      CodeUri: ./Lambdas/ 
