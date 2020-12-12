@@ -1,13 +1,13 @@
 AWSTemplateFormatVersion : '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Resources:
-  HelloWorldFunction:
+  index-photos:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index-photos.lambda_handler
       Runtime: python3.7
       CodeUri: ./Lambdas/
-  HelloWorld2Function:
+  search-photos:
     Type: AWS::Serverless::Function
     Properties:
       Handler: search-photos.lambda_handler
