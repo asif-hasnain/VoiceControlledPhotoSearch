@@ -24,7 +24,7 @@ Resources:
           Properties:
             Path: /MyResource
             Method: ANY
-    IndexerFunction:
+  IndexerFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
       Description: 'Run Rekognition detect labels from S3 events and store results in ElasticSearch.'
@@ -42,7 +42,7 @@ Resources:
         S3JpgEvent:
           Type: S3
           Properties:
-            Bucket: !Ref ImageBucket
+            Bucket: serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4
             Events: s3:ObjectCreated:*
             Filter:
               S3Key:
@@ -61,5 +61,3 @@ Resources:
                   -
                     Name: suffix
                     Value: png
-  ImageBucket:
-    Type: 'AWS::S3::Bucket'
