@@ -52,6 +52,3 @@ Resources:
                     Value: png
   ImageBucket:
     Type: 'AWS::S3::Bucket'
-    DeletionPolicy: Retain            
-    Properties:
-      BucketName: serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4 
