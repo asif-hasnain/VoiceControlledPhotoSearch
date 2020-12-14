@@ -31,7 +31,8 @@ Resources:
         S3JpgEvent:
           Type: S3
           Properties:
-            Bucket: arn:aws:s3:::serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4
+            Bucket: >-
+              arn:aws:s3:::serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4
             Events: s3:ObjectCreated:*
             Filter:
               S3Key:
@@ -42,7 +43,8 @@ Resources:
         S3PngEvent:
           Type: S3
           Properties:
-            Bucket: arn:aws:s3:::serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4
+            Bucket: >-
+              arn:aws:s3:::serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4
             Events: s3:ObjectCreated:*
             Filter:
               S3Key:
