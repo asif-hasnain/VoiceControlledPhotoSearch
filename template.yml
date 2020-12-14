@@ -22,12 +22,8 @@ Resources:
       Runtime: python3.6
       CodeUri: ./lfes/
       Timeout: 30
-      Policies:
-        - AmazonS3ReadOnlyAccess
-        - AmazonRekognitionFullAccess
-        - AWSQuickSightElasticsearchPolicy
-        - AWSLambdaBasicExecutionRole
-        - AmazonLexFullAccess
+      Role: >-
+        arn:aws:iam::189187153403:role/serverlessrepo-s3-image-indexe-IndexerFunctionRole-1B7JN8PGHDO3H
       Environment:
         Variables:
           ELASTICSEARCH_URL: search-assignment-3-embfkaeetlkbbmtru7xvvuca5i.us-west-2.es.amazonaws.com
