@@ -37,7 +37,7 @@ Resources:
         - AmazonRekognitionFullAccess
       Environment:
         Variables:
-          ELASTICSEARCH_URL: !GetAtt IndexStore.DomainEndpoint
+          ELASTICSEARCH_URL: https://search-assignment-3-embfkaeetlkbbmtru7xvvuca5i.us-west-2.es.amazonaws.com
       Events:
         S3JpgEvent:
           Type: S3
@@ -61,32 +61,5 @@ Resources:
                   -
                     Name: suffix
                     Value: png
-
-  IndexStore:
-    Type: 'AWS::Elasticsearch::Domain'
-    Properties:
-      ElasticsearchClusterConfig: 
-        DedicatedMasterEnabled: "false"
-        InstanceCount: "2"
-        ZoneAwarenessEnabled: "true"
-        InstanceType: "m4.large.elasticsearch"
-      EBSOptions: 
-        EBSEnabled: true
-        Iops: 0
-        VolumeSize: 20
-        VolumeType: 'gp2'
-      ElasticsearchVersion: 6.0
-      AdvancedOptions: 
-        rest.action.multi.allow_explicit_index: "true"
-      AccessPolicies: 
-        Version: "2012-10-17"
-        Statement: 
-          - 
-            Effect: "Allow"
-            Principal: 
-              AWS: "*"
-            Action: "es:*"
-            Resource: !Sub "arn:aws:es:${AWS::Region}:${AWS::AccountId}:domain/*"
-
   ImageBucket:
     Type: 'AWS::S3::Bucket'
