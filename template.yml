@@ -1,15 +1,25 @@
 AWSTemplateFormatVersion : '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Resources:
-  indexphotos:
-    Type: AWS::Serverless::Function
+  LF2:
+    Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: index-photos.lambda_handler
+      Handler: lambda_function.lambda_handler
       Runtime: python3.7
-      CodeUri: ./Lambdas/
-  searchphotos:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: search-photos.lambda_handler
-      Runtime: python3.7
-      CodeUri: ./Lambdas/
+      CodeUri: .
+      Description: ''
+      MemorySize: 528
+      Timeout: 30
+      Role: >-
+        arn:aws:iam::189187153403:role/serverlessrepo-s3-image-indexe-IndexerFunctionRole-1B7JN8PGHDO3H
+      Events:
+        Api1:
+          Type: Api
+          Properties:
+            Path: /search
+            Method: GET
+        Api2:
+          Type: Api
+          Properties:
+            Path: /MyResource
+            Method: ANY
