@@ -5,7 +5,7 @@ phases:
   #       python: 3.7
   build:
     commands:
-      - sam package --template-file template.yml --parameters ParameterKey=ImageBucket,ParameterValue=serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4 --s3-bucket s3-cd-assignment --output-template-file packaged-template.yml
+      - sam package --template-file template.yml --s3-bucket s3-cd-assignment --output-template-file packaged-template.yml
 artifacts:
   files:
     - packaged-template.yml

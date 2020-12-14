@@ -1,10 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
-Parameters:
-  ImageBucket:
-    Type: String
-    Description: S3 bucket that's used for the Lambda event notification
+
 Resources:
   LF2:
     Type: 'AWS::Serverless::Function'
@@ -17,17 +14,6 @@ Resources:
       Timeout: 30
       Role: >-
         arn:aws:iam::189187153403:role/serverlessrepo-s3-image-indexe-IndexerFunctionRole-1B7JN8PGHDO3H
-      Events:
-        Api1:
-          Type: Api
-          Properties:
-            Path: /search
-            Method: GET
-        Api2:
-          Type: Api
-          Properties:
-            Path: /MyResource
-            Method: ANY
   IndexerFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -65,3 +51,5 @@ Resources:
                   -
                     Name: suffix
                     Value: png
+  ImageBucket:
+    Type: 'AWS::S3::Bucket'
