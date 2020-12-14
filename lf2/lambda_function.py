@@ -85,7 +85,7 @@ def lambda_handler(event, context):
     
     print(output)
     
-    bucket = 'assignment3-imagebucket-ju0dt4g6po92'
+    bucket = 'serverlessrepo-s3-image-indexer-elast-imagebucket-daiemzlg6id4'
     img_array = []
     for i in output:
         if i:
