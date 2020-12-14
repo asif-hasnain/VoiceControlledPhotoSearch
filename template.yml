@@ -25,6 +25,9 @@ Resources:
       Policies:
         - AmazonS3ReadOnlyAccess
         - AmazonRekognitionFullAccess
+        - AWSQuickSightElasticsearchPolicy
+        - AWSLambdaBasicExecutionRole
+        - AmazonLexFullAccess
       Environment:
         Variables:
           ELASTICSEARCH_URL: search-assignment-3-embfkaeetlkbbmtru7xvvuca5i.us-west-2.es.amazonaws.com
