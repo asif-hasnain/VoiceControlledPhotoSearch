@@ -1,6 +1,10 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: An AWS Serverless Specification template describing your function.
+Parameters:
+  ImageBucket:
+    Type: String
+    Description: S3 bucket that's used for the Lambda event notification
 Resources:
   LF2:
     Type: 'AWS::Serverless::Function'
@@ -37,7 +41,7 @@ Resources:
         - AmazonRekognitionFullAccess
       Environment:
         Variables:
-          ELASTICSEARCH_URL: https://search-assignment-3-embfkaeetlkbbmtru7xvvuca5i.us-west-2.es.amazonaws.com
+          ELASTICSEARCH_URL: search-assignment-3-embfkaeetlkbbmtru7xvvuca5i.us-west-2.es.amazonaws.com
       Events:
         S3JpgEvent:
           Type: S3
@@ -61,5 +65,3 @@ Resources:
                   -
                     Name: suffix
                     Value: png
-  ImageBucket:
-    Type: 'AWS::S3::Bucket'
